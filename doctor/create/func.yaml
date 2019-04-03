@@ -1,11 +1,11 @@
 schema_version: 20180708
-name: patient-create
-version: 0.0.8
+name: doctor-create
+version: 0.0.12
 runtime: java
 build_image: fnproject/fn-java-fdk-build:jdk11-1.0.86
 run_image: fnproject/fn-java-fdk:jre11-1.0.86
-cmd: com.cgm.patient.PatientFunction::create
+cmd: DoctorFunction::create
 triggers:
-- name: patient-create-trigger
+- name: doctor-create-trigger
   type: http
-  source: /patient-create-trigger
+  source: /doctor-create-trigger

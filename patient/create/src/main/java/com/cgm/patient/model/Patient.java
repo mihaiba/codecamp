@@ -2,7 +2,9 @@ package com.cgm.patient.model;
 
 import com.google.gson.Gson;
 
-public class Patient {
+import java.io.Serializable;
+
+public class Patient implements Serializable {
 
     private String id;
     private String name;
