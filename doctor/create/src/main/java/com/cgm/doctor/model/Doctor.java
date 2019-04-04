@@ -3,6 +3,7 @@ package com.cgm.doctor.model;
 import com.google.gson.Gson;
 
 import java.io.Serializable;
+import java.util.Objects;
 
 public class Doctor implements Serializable {
 
@@ -33,5 +34,19 @@ public class Doctor implements Serializable {
 
     public String toJson() {
         return new Gson().toJson(this);
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Doctor doctor = (Doctor) o;
+        return Objects.equals(name, doctor.name) &&
+                Objects.equals(specialization, doctor.specialization);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(name, specialization);
     }
 }

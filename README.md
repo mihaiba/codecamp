@@ -12,19 +12,19 @@ build a function
 
 create an app
 =======
-`fn create app codecamp-patient-app`
+`fn create app AIS`
 
 deploy function to app
 ======
-`fn --verbose deploy --app codecamp-patient-app --local`
+`fn --verbose deploy --app AIS --local`
 
 delete an app
 =====
-`fn delete app codecamp-patient-app`
+`fn delete app AIS`
 
 making a HTTP request
 =====
-`curl -H "Content-Type: application/json" -d '{"id":"1","name":"John Doe"}' http://localhost:8080/t/codecamp-patient-app/patient-create-trigger`
+`curl -H "Content-Type: application/json" -d '{"id":"","name":"John Doe"}' http://localhost:8080/t/AIS/patient-create-trigger`
 
 
 
@@ -34,16 +34,16 @@ create doctor functions
 
 create an app
 =======
-`fn create app codecamp-doctor-app`
+`fn create app AIS`
 
 deploy function to app
 ======
-`fn --verbose deploy --app codecamp-doctor-app --local`
+`fn --verbose deploy --app AIS --local`
 
 delete an app
 =====
-`fn delete app codecamp-doctor-app`
+`fn delete app AIS`
 
 making a HTTP request
 =====
-`curl -H "Content-Type: application/json" -d '{"id":"1","name":"Acula","specialization":"vampire"}' http://localhost:8080/t/codecamp-doctor-app/doctor-create-trigger`
+`curl -H "Content-Type: application/json" -d '{"id":"","name":"Acula","specialization":"blood analysis"}' http://localhost:8080/t/AIS/doctor-create-trigger`

@@ -6,11 +6,14 @@ import java.util.concurrent.ConcurrentHashMap;
 
 public class DoctorFunction {
 
-    private static final ConcurrentHashMap<String, Doctor> doctorStore = new ConcurrentHashMap<>();
+    private static final ConcurrentHashMap<Doctor, Doctor> doctorStore = new ConcurrentHashMap<>();
 
     public Doctor create(Doctor input) {
-        doctorStore.put(input.getId(), input);
-        return doctorStore.get(input.getId());
+        return doctorStore.computeIfAbsent(input, this::computeKey);
+    }
+
+    private Doctor computeKey(Doctor input) {
+        return new Doctor(String.valueOf(doctorStore.size() + 1), input.getName(), input.getSpecialization());
     }
 
 }

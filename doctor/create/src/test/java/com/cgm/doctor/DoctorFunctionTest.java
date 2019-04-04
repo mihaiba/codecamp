@@ -13,7 +13,7 @@ public class DoctorFunctionTest {
     @Rule
     public final FnTestingRule testing = FnTestingRule.createDefault();
 
-    private static final Doctor given = new Doctor("1", "Acula", "vampire");
+    private static final Doctor given = new Doctor("", "Acula", "vampire");
     private static final Doctor expected = new Doctor("1", "Acula", "vampire");
 
     @Test
